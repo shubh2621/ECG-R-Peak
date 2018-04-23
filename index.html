@@ -1,1 +1,295 @@
-<h1>Hello World</h1>
+
+<!-- saved from url=(0039)https://karthikey97.github.io/Snakebot/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<style type="text/css">
+			body{font-family: sans-serif;}
+			p{display: inline-block;}
+			img{display: block;}
+			.container{width: 90%;position absolute;margin: auto;}
+			.title{position: relative;width: 90%;margin: auto;text-align: center;font-weight: bold;font-size: 30px;padding: 1%;}
+			.section{position: relative;width: 90%;margin: auto;padding: 2%;}
+			.subsection{position: relative; width: 98%;text-align: justify;padding: 10px;}
+			.heading{position: relative; width: 98%;text-align: left;font-size: 19px;font-weight: bold;}
+			.text{width: 95%;font-size: 16px;text-align: justify;padding: 10px 0px 10px 0px;}
+			.authors{position: relative;width: 80%;margin: auto;padding: 2%;font-style: italic;text-align: center;font-size: 14px;}
+			.image{width: 95%;font-size: 15px;text-align: left;padding: 10px;}
+		</style>
+	<style></style><style type="text/css">.backpack.dropzone {
+  font-family: 'SF UI Display', 'Segoe UI';
+  font-size: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 250px;
+  height: 150px;
+  font-weight: lighter;
+  color: white;
+  will-change: right;
+  z-index: 2147483647;
+  bottom: 20%;
+  background: #333;
+  position: fixed;
+  user-select: none;
+  transition: left .5s, right .5s;
+  right: 0px; }
+  .backpack.dropzone .animation {
+    height: 80px;
+    width: 250px;
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+  .backpack.dropzone .title::before {
+    content: 'Save to'; }
+  .backpack.dropzone.closed {
+    right: -250px; }
+  .backpack.dropzone.hover .animation {
+    animation: sxt-play-anim-hover 0.91s steps(21);
+    animation-fill-mode: forwards;
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/hoverstate.png") left center; }
+
+@keyframes sxt-play-anim-hover {
+  from {
+    background-position: 0px; }
+  to {
+    background-position: -5250px; } }
+  .backpack.dropzone.saving .title::before {
+    content: 'Saving to'; }
+  .backpack.dropzone.saving .animation {
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saving_loop.png") left center;
+    animation: sxt-play-anim-saving steps(59) 2.46s infinite; }
+
+@keyframes sxt-play-anim-saving {
+  100% {
+    background-position: -14750px; } }
+  .backpack.dropzone.saved .title::before {
+    content: 'Saved to'; }
+  .backpack.dropzone.saved .animation {
+    background: url("chrome-extension://lifbcibllhkdhoafpjfnlhfpfgnpldfl/assets/backpack/dropzone/saved.png") left center;
+    animation: sxt-play-anim-saved steps(20) 0.83s forwards; }
+
+@keyframes sxt-play-anim-saved {
+  100% {
+    background-position: -5000px; } }
+</style></head>
+	<body>
+		<div class="container">
+			<div class="title">ECG- Detection of R-peaks</div>
+
+			<div class="authors">
+
+				<!-- Start edit here  -->
+				<b>
+				<p>Shubham Choudhary, Roll No.: 150106044, Branch: BSBE</p>; &nbsp; &nbsp;
+				<p>Ayush Jain, Roll No.: 150106013, Branch: BSBE</p>; &nbsp; &nbsp;
+                <p>Saurabh Chandrakar, Roll No.: 150106043, Branch: BSBE</p>; &nbsp; &nbsp;</b>
+
+				<!-- Stop edit here -->
+
+			</div>
+
+
+			<div class="section">
+				<div class="heading">Abstract</div>
+				<div class="text">
+
+					<!-- Start edit here  -->
+					Electrocardiogram (ECG) is one of the most common biological signals which play a significant role in the diagnosis of heart diseases. One of the most important parts of ECG signal processing is interpretation of QRS complex and obtaining its characteristics. R wave is one of the most important sections of this complex, which has an essential role in diagnosis of heart rhythm irregularities and also in determining heart rate variability (HRV). This paper employs Hilbert and wavelet transforms as well as adaptive thresholding method to investigate an optimal combination of these signal processing techniques for the detection of R peak. In the experimental sections of this paper, the proposed algorithms are evaluated using both ECG signals from MIT-BIH database and synthetic data simulated in MATLAB environment with different arrhythmias, artifacts, and noise levels. Finally, by using wavelet and Hilbert transforms as well as by employing adaptive thresholding technique, an optimal combinational method for R peak detection namely WHAT is obtained that outperforms other techniques quantitatively and qualitatively.
+					<br>
+					<br>
+					<a href="https://github.com/shubh2621/ECG-R-Peak">Link to the project codes</a>
+					<!-- Stop edit here -->
+
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="heading">1. Introduction</div>
+				<div class="text">
+
+					<!-- Start edit here  -->
+					The electrocardiogram (ECG) signal is one of the most important and well known biological signals used for diagnosing people's health. Detection of QRS complex is one of the most important parts carried out in the ECG signal analysis. QRS detection, especially detection of R wave in heart signal, is easier than other portions of ECG signal due to its structural form and high amplitude.
+					<!-- Stop edit here -->
+
+				</div>
+
+				<div class="subsection">
+					<div class="heading">1.1 ECG Introduction</div>
+					<div class="text">
+
+						<!-- Start edit here  -->
+						The QRS complex is a name for the combination of three of the graphical deflections seen on a typical electrocardiogram (EKG or ECG). It is usually the central and most visually obvious part of the tracing. It corresponds to the depolarization of the right and left ventricles of the human heart. In adults, it normally lasts 0.06–0.10 s; in children and during physical activity, it may be shorter. The Q, R, and S waves occur in rapid succession, do not all appear in all leads, and reflect a single event and thus are usually considered together. A Q wave is any downward deflection immediately following the P wave. An R wave follows as an upward deflection, and the S wave is any downward deflection after the R wave. The T wave follows the S wave, and in some cases, an additional U wave follows the T wave. 					<br>
+                        <img src="ors.png" style="height: 75%;">
+						<br>
+						 
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+
+				<div class="subsection">
+					<div class="heading">1.2 Figure</div>
+					<div class="image">
+
+						<!-- Start edit here  -->
+						<table>
+						<tbody><tr>
+						<td>
+						R-Peak Detection in Matlab
+							<img src="rpeak_matlab.png" alt="Block Diagram" width="100%" height="400px"></td>
+						
+						</tr></tbody></table>
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+				<div class="subsection">
+					<div class="heading">1.3 Proposed Approach</div>
+					<div class="text">
+
+						<!-- Start edit here  -->
+						<ol>
+                            <li>Remove low frequency components
+                                <ol><br>
+                                    <li>Change to frequency domain using fft</li><br>
+                                    <li>Remove low frequency components</li><br>
+                                    <li>Back to time domain using ifft</li><br>
+                                </ol>
+                            </li>
+                            <li>Find local maxima using windowed filter</li><br>
+                            <li>Remove small values, store significant ones</li><br>
+                            <li>Adjust filter size and repeat 2,3</li>
+                        </ol>
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+				<div class="subsection">
+					<div class="heading">1.4 Steps Involved</div>
+					<div class="text">
+
+						<!-- Start edit here  -->
+						<ul style="text-transform: capitalize;">
+                        	<li>Input given</li>
+                        	<img src="1.png">
+                        	<li>After removing low frequency components</li>
+                        	<img src="2.png">
+                        	<li>Using a windowing filter</li>
+                        	<img src="3.png">
+                        	<li>Removing signal lower than threshold value</li>
+                        	<img src="4.png">
+                        	<li>Using the adjusted filter</li>
+                        	<img src="5.png">
+                        </ul>
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+
+				<div class="subsection">
+					<div class="heading">1.5 Output Result</div>
+					<div class="text">
+						The Output wave obtained is given below.
+						<img src="final.png" height="100%">
+						<!-- Start edit here  -->
+						
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="heading">2. Methodology</div>
+				<div class="text">
+					<p>2.1. Smoothing and filtering of raw data </p>
+
+					<p style="padding-left: 20px;">The derivative based approach amplifies the high frequency noises, which leads to high difference signals due to noise. So, initial smoothing and filtering of the ECG data is done to eliminate power frequencies and high frequency noise in the ECG. </p>
+
+					<p>2.2. Detection of QRS Regions  </p>
+
+					<p style="padding-left: 20px;">Owing to the high frequency content of the QRS region [5-15 Hz] the derivative of these regions of ECG have higher
+					amplitudes. As the sampling instants of digital ECG data remains constant the amplitude differences are proportional
+					to the derivatives which can be used to detect the QRS regions. Double differencing and squaring intensifies the
+					magnitudes of the difference signal in the QRS regions which aids in the localisation of the QRS regions.The process involves the following steps <br>
+					i. From the ECG data array e (n) the squared double differences are calculated at all points to yield the
+					 difference array d (j). <br>
+					ii. The difference array is sorted in descending order of magnitude and the difference peaks above a constant
+					 threshold value of 3% of the maximum are selected.<br>
+					iii. Since the maximum duration of the QRS regions is 150 ms, to eliminate possibility of detection of several
+					 peaks in the same QRS region all the difference peaks within an interval of ±75 ms of each selected
+					 difference peaks are eliminated.<br>
+					iv. The QRS regions are identified to be within a window of ± 75 ms of each selected peaks on the ECG data
+					 array as shown in Fig 2 (c). </p>
+
+					<p>2.3 Detection of R peaks</p>
+
+					<p style="padding-left: 20px;">The R peaks are the positive peaks of the QRS regions. These are detected by relative magnitude comparison in each QRS regions. A search for maximum was done on the relative magnitudes for each window to eliminate errors due to baseline wander.<br>
+					i. For each detected QRS window the maximum and minimum amplitude values of the ECG data array are
+					 calculated.<br>
+					ii. The mean of the maximum and minimum values are subtracted from all data points of that window to get the relative magnitudes.<br>
+					iii. The position of the maximum of the relative magnitudes is the R point locations of the corresponding QRS window. The absolute maximum value of the QRS window is not selected as the R-point location to
+					 eliminate possibility of detection of the S point  </p>
+
+					<p>2.4 Processing of RR intervals </p>
+
+					<p style="padding-left: 20px;">The R peaks thus obtained may not be accurate. There can be missed peaks or false detections. To ensure detection
+					accuracy the RR intervals are processed according to certain criteria<br>
+					i. It is considered that the minimum difference between two successive R peaks can be 200 ms. Any peaks
+					 detected within 200 ms of the first is considered as noise peak and eliminated<br>
+					ii. The average RR interval for 5 successive R peaks, two on either side of the R peak corresponding to the
+					 highest difference peak is calculated and taken as reference for the RR interval processing.<br>
+					iii. All the successive RR intervals are processed by comparing with the calculated average RR interval.<br>
+					 CASE 1- If the RR interval between any two detected peaks is less than 70% of the average RR interval then
+					 the 2nd peak is eliminated.<br>
+					 CASE 2- If the RR interval between any two detected peaks is more than 180% of the average interval then
+					 a search for another R peak in that interval is initiated with decreased threshold for the difference
+					 signal. </p>					
+
+					 <img src="result.png">
+				</div>
+			</div>
+
+			
+
+			<div class="section">
+				<div class="heading">3. Conclusions</div>
+				<div class="subsection">
+					<div class="heading">3.1 Summary</div>
+					<div class="text">
+
+						<!-- Start edit here  -->
+						The proposed algorithm is simple with low computational overhead and fairly good detection sensitivity. For this
+						the algorithm can be easily implemented in an embedded platform for use in wearable cardio-respiratory systems. As
+						it was insensitive to low frequency noise like baseline wander, baseline elimination is not required. Conventional
+						derivative based methods are sensitive to high frequency noise leading to false detections, in this method some false
+						detection could be eliminated by processing the RR intervals 
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+			</div>
+
+			<div class="section">
+				<div class="heading">4. References</div>
+				<div class="subsection">
+					<!-- <div class="heading">3.1 Summary</div> -->
+					<div class="text">
+
+						<!-- Start edit here  -->
+						<ul>
+							<li>https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3342622/ for ecg details</li>
+							<li>https://in.mathworks.com/help/wavelet/ug/r-wave-detection-in-the-ecg.html for matlab and ecg working in harmony </li>
+							<li>https://en.wikipedia.org/wiki/Electrocardiography for learning the details of ecg</li>
+							<li>https://en.wikipedia.org/wiki/QRS_complex for knowing the peak significance</li>
+							<li>https://en.wikipedia.org/wiki/Fast_Fourier_transform for converting time domain signal into frequency domain signal</li>
+						</ul>
+						<!-- Stop edit here -->
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	
+
+</body></html>

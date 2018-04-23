@@ -35,22 +35,4 @@ I. How to use:
             filter window size. So the fifth plot contains the result of
             2-d filtering pass;
          f. Sixth plot shows the final result.
-
-II. Package content:
-
-   1. ecgdemo.m        - MatLab demo script;
-   2. ecgdemowinmax.m  - MatLab window filter script;
-   3. ecgdemodata1.mat - 1-st data sample;
-   4. ecgdemodata2.mat - 2-d data sample;
-   5. readme.txt       - this file.
-
-
-
-                                Downloaded from:
-                                   www.librow.com
-
-                                Feedback:
-                                   Sergey Chernenko: S.Chernenko@librow.com
-
-    Surya modified the code by adding Heart Rate calculation  and some 
-    additional comments. Contact: p.surya1994@gmail.com  
+ 
