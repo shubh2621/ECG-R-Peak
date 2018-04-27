@@ -103,8 +103,7 @@ for demo = 1:2:3
     averageHeartRate = 60 * samplingrate/averageDistanceBetweenPeaks;
     
     disp('Average Heart Rate = ');
-    disp(averageHeartRate);
-%% 
+    disp(averageHeartRate); 
     
     %   Create figure - stages of processing
     figure(demo); set(demo, 'Name', strcat(plotname, ' - Processing Stages'));
