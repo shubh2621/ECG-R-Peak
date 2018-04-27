@@ -1,5 +1,3 @@
-
-<!-- saved from url=(0039)https://karthikey97.github.io/Snakebot/ -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<style type="text/css">
 			body{font-family: sans-serif;}
@@ -168,17 +166,41 @@
 					<div class="text">
 
 						<!-- Start edit here  -->
-						<ul style="text-transform: capitalize;">
-                        	<li>Input given</li>
+						<ul>
+                        	<li style="text-transform: capitalize;">Input given</li>
                         	<img src="1.png">
-                        	<li>After removing low frequency components</li>
+                        	<p class="img_desc">
+                        		As one can see the ECG is uneven. Thus our first step is to straighten
+it. To say that in mathematical language, we should remove low-frequency
+component. The idea is to apply direct fast Fourier transforms — FFT,
+remove low frequencies and restore ECG with the help of inverse FFT
+                        	</p>
+                        	<li style="text-transform: capitalize;">After removing low frequency components</li>
                         	<img src="2.png">
-                        	<li>Using a windowing filter</li>
+                        	<p class="img_desc">
+                        		 Here
+is the result of FFT processing
+                        	</p>
+                        	<li style="text-transform: capitalize;">Using a windowing filter</li>
                         	<img src="3.png">
-                        	<li>Removing signal lower than threshold value</li>
+                        	<p class="img_desc">
+                        		Our second step is to find local maxima. To do that we use windowed
+filter that “sees” only maximum in his window and ignores all other values.
+On this step we use window of default size
+                        	</p>
+                        	<li style="text-transform: capitalize;">Removing signal lower than threshold value</li>
                         	<img src="4.png">
-                        	<li>Using the adjusted filter</li>
+                        	<p class="img_desc">
+                        		Now we should remove small values and preserve significant ones. Here we are using threshold value.
+                        	</p>
+                        	<li style="text-transform: capitalize;">Using the adjusted filter</li>
                         	<img src="5.png">
+                        	<p class="img_desc">
+                        		In this case the result is good but in general case we cannot be sure we
+have all the peaks. So the next step is to adjust filter window size and repeat
+filtering. Compare the result previous one. now filtering quality is
+much better.
+                        	</p>
                         </ul>
 						<!-- Stop edit here -->
 
@@ -189,7 +211,7 @@
 					<div class="heading">1.5 Output Result</div>
 					<div class="text">
 						The Output wave obtained is given below.
-						<img src="final.png" height="100%">
+						<img src="final.png" height="90%">
 						<!-- Start edit here  -->
 						
 						<!-- Stop edit here -->
@@ -198,7 +220,7 @@
 				</div>
 			</div>
 
-			<div class="section">
+<!-- 			<div class="section">
 				<div class="heading">2. Methodology</div>
 				<div class="text">
 					<p>2.1. Smoothing and filtering of raw data </p>
@@ -248,13 +270,13 @@
 					 <img src="result.png">
 				</div>
 			</div>
-
+ -->
 			
 
 			<div class="section">
-				<div class="heading">3. Conclusions</div>
+				<div class="heading">2. Conclusions</div>
 				<div class="subsection">
-					<div class="heading">3.1 Summary</div>
+					<div class="heading">2.1 Summary</div>
 					<div class="text">
 
 						<!-- Start edit here  -->
@@ -270,7 +292,7 @@
 			</div>
 
 			<div class="section">
-				<div class="heading">4. References</div>
+				<div class="heading">3. References</div>
 				<div class="subsection">
 					<!-- <div class="heading">3.1 Summary</div> -->
 					<div class="text">
