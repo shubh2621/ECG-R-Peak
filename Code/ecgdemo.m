@@ -94,7 +94,7 @@ for demo = 1:2:3
             peaks2(data)=1;
         end
     end
-%% This part of the code between the double comments is added by Surya Penmetsa
+
     positions2=find(peaks2);
     distanceBetweenFirstAndLastPeaks = positions2(length(positions2))-positions2(1);
  
@@ -104,7 +104,6 @@ for demo = 1:2:3
     
     disp('Average Heart Rate = ');
     disp(averageHeartRate);
-% The code written by Surya Penmetsa Ends here.
 %% 
     
     %   Create figure - stages of processing
